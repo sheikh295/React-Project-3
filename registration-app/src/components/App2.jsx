@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { initializeApp } from "firebase/app"
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth"
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth"
 import Signinform from './Signinform'
 import Signupform from './Signupform'
 
@@ -27,12 +27,13 @@ class App2 extends Component {
             page: 1,
             errormsg: "",
             isRegistered: 0,
+            isSignedIn: 0,
         }
     }
     
     pageSwitchHandler = (event) => {
         event.preventDefault();
-        this.setState({page : !this.state.page})
+        this.setState({page : !this.state.page, errormsg: ""})
     };
     registrationHandler = (event) => {
         event.preventDefault();
@@ -48,23 +49,42 @@ class App2 extends Component {
             createUserWithEmailAndPassword(auth, email, password, phone)
               .then((userCredential) => {
                 const user = userCredential.user;
-                console.log(user);
-                this.setState({isRegistered: !this.state.isRegistered})
+                this.setState({isRegistered: !this.state.isRegistered}, () => {
+                  event.target.email.value = "";
+                  event.target.phone.value = "";
+                  event.target.password.value = "";
+                  event.target.confirmpassword.value = "";
+                })
 
               })
               .catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
-                console(errorMessage, errorCode);
                 this.setState({errormsg: errorMessage})
               });
         };
     };
 
+    signInHandler = (event) => {
+      event.preventDefault();
+      const email = event.target.email.value;
+      const password = event.target.password.value;
+      signInWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          const user = userCredential.user;
+          this.setState({isSignedIn: !this.state.isSignedIn});
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          this.setState({errormsg: errorMessage});
+        });
+      };
+
   render() {
     return (
       <>
-        {this.state.page ? <Signupform isRegistered={this.state.isRegistered} errormsg={this.state.errormsg} switch={this.pageSwitchHandler} register={this.registrationHandler} /> : <Signinform switch={this.pageSwitchHandler} />}
+        {this.state.page ? <Signupform isRegistered={this.state.isRegistered} errormsg={this.state.errormsg} switch={this.pageSwitchHandler} register={this.registrationHandler} /> : <Signinform switch={this.pageSwitchHandler} signin={this.signInHandler} isSignedIn={this.state.isSignedIn} errormsg={this.state.errormsg} />}
       </>
     )
   }
