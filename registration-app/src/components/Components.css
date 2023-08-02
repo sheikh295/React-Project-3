@@ -1,4 +1,4 @@
-.siwelcomeheading{
+.welcomeheading{
     width: 90%;
     height: 50px;
     font-size: 30px;
@@ -19,11 +19,12 @@
     padding: 10px;
     background-color: rgb(247, 247, 247);
 }
-.siheading{
+.sisuheading{
     text-align: center;
     font-size: 30px;
     margin-top: 5px;
     font-family: sans-serif;
+    margin-bottom: 13px;
 }
 .sigmailbtn{
     width: 49%;
@@ -62,13 +63,13 @@
     transition-duration: 500ms;
     background-color: rgb(9, 3, 87);
 }
-.siemailheading{
+.siinputheading{
     margin-top: 20px;
     margin-left: 20px;
     font-size: 20px;
     font-family: sans-serif;
 }
-.siemail{
+.siinput{
     display: block;
     margin: auto;
     width: 90%;
@@ -79,24 +80,6 @@
     box-shadow: 0px 0px 10px gray;
     padding-left: 20px;
     font-size: 17px;
-}
-.sipassword{
-    display: block;
-    margin: auto;
-    width: 90%;
-    margin-top: -10px;
-    border: 0px;
-    border-radius: 10px;
-    height: 60px;
-    box-shadow: 0px 0px 10px gray;
-    padding-left: 20px;
-    font-size: 17px;
-}
-.sipasswordheading{
-    margin-top: 20px;
-    margin-left: 20px;
-    font-size: 20px;
-    font-family: sans-serif;
 }
 .sisibtn{
     margin-top: 20px;
@@ -134,4 +117,32 @@
     margin-left: 5px;
     font-family: sans-serif;
     float: left;
+}
+.sucontainer{
+    width: 500px;
+    height: 590px;
+    box-shadow: 0px 0px 10px gray;
+    border-radius: 10px;
+    margin: auto;
+    margin-top: 50px;
+    padding: 10px;
+    background-color: rgb(247, 247, 247);
+}
+.suinputheading{
+    margin-top: 15px;
+    margin-left: 20px;
+    font-size: 17px;
+    font-family: sans-serif;
+}
+.suinput{
+    display: block;
+    margin: auto;
+    width: 90%;
+    margin-top: -10px;
+    border: 0px;
+    border-radius: 10px;
+    height: 40px;
+    box-shadow: 0px 0px 10px gray;
+    padding-left: 20px;
+    font-size: 17px;
 }

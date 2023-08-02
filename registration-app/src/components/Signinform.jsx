@@ -5,14 +5,14 @@ class Signinform extends Component {
   render() {
     return (
       <>
-        <div className='siwelcomeheading'>Welcome</div>
+        <div className='welcomeheading'>Welcome</div>
         <div className='sicontainer'>
             <form>
-                <p className='siheading'>Please Sign In</p>
-                <p className='siemailheading'>Email:</p>
-                <input required name='email' type='email' className='siemail' placeholder='Email' />
-                <p className='sipasswordheading'>Password:</p>
-                <input required name='password' type='password' className='sipassword' placeholder='Password' />
+                <p className='sisuheading'>Please Sign In</p>
+                <p className='siinputheading'>Email:</p>
+                <input required name='email' type='email' className='siinput' placeholder='Email' />
+                <p className='siinputheading'>Password:</p>
+                <input required name='password' type='password' className='siinput' placeholder='Password' />
                 <button type='submit' className='sisibtn'>Sign In</button>
             </form>
             <div><div className='siorline'></div><div className='sior'>or</div><div className='siorline'></div></div>
