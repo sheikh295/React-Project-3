@@ -1,14 +1,12 @@
 import { useState } from 'react'
 import './App.css'
-import Signinform from './components/Signinform'
-import Signupform from './components/Signupform'
+import App2 from './components/App2'
 
 function App() {
 
   return (
     <>
-      <Signinform />
-      <Signupform />
+      <App2 />
     </>
   )
 }

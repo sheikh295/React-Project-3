@@ -2,6 +2,15 @@ import React, { Component } from 'react'
 import './Components.css'
 
 class Signinform extends Component {
+  constructor(props) {
+    super(props)
+    this.props = this.props;
+  
+    this.state = {
+       
+    }
+  }
+
   render() {
     return (
       <>
@@ -18,7 +27,7 @@ class Signinform extends Component {
             <div><div className='siorline'></div><div className='sior'>or</div><div className='siorline'></div></div>
             <button className='sigmailbtn'>Login using Gmail</button>
             <button className='sifbbtn'>Login using Facebook</button>
-            <div className='siaskacc'>Don't have an account? <a href=''> Sign Up</a></div>
+            <div className='siaskacc'>Don't have an account? <a href='#' onClick={this.props.switch}> Sign Up</a></div>
         </div>
       </>
     )
