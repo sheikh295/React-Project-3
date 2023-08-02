@@ -15,8 +15,10 @@ class Signinform extends Component {
                 <input required name='password' type='password' className='sipassword' placeholder='Password' />
                 <button type='submit' className='sisibtn'>Sign In</button>
             </form>
+            <div><div className='siorline'></div><div className='sior'>or</div><div className='siorline'></div></div>
             <button className='sigmailbtn'>Login using Gmail</button>
             <button className='sifbbtn'>Login using Facebook</button>
+            <div className='siaskacc'>Don't have an account? <a href=''> Sign Up</a></div>
         </div>
       </>
     )
